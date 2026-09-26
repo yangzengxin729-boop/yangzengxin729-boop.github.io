@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>杨增鑫 YZX — AIGC编导 · 新媒体运营</title>
+    <meta name="description" content="杨增鑫 · AIGC编导 × 新媒体运营 — 用短视频内容驱动商业线索增长" />
+    <meta name="theme-color" content="#070707" />
+
+    <!--
+      性能策略
+      1) 字体自托管（tools/selfhost-fonts.mjs 生成），不再依赖 fonts.googleapis.com：
+         少 2 个跨域握手，国内访问稳定，且与 HTML 同源可预加载。
+      2) 首屏用到的 4 个字重 preload（共约 112KB），渲染前字体就已就位 →
+         不会先画系统字体再换成 Anton，从根上消掉字体造成的 CLS。
+      3) 中文走系统字体（PingFang SC / 微软雅黑），不下载 Noto Sans SC（省上百 KB）。
+      4) hero 封面预加载（LCP 元素）+ hero 视频（已压到 ~2.3MB）提前发起请求。
+    -->
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/anton-normal-400-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/playfairdisplay-italic-500-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/spacegrotesk-normal-500-latin.woff2" crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href="/fonts/archivo-normal-400-latin.woff2" crossorigin />
+
+    <!-- LCP：首屏背景对应的封面（注意首屏用的是 work-01，不是 hero）
+         视频本身不预加载：它会跟字体和封面抢带宽，video 标签 preload="auto" 已经够早。 -->
+    <link rel="preload" as="image" href="/posters/work-01.webp" fetchpriority="high" />
+
+    <!-- 自托管字体表：仅 latin / latin-ext 子集，约 4KB -->
+    <link rel="stylesheet" href="/fonts/fonts.css" />
+    <script type="module" crossorigin src="/assets/index-DjCJoMSs.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/react-Ds7D3P6J.js">
+    <link rel="modulepreload" crossorigin href="/assets/gsap-CiEuWA-R.js">
+    <link rel="modulepreload" crossorigin href="/assets/lenis-XHln91gA.js">
+    <link rel="stylesheet" crossorigin href="/assets/index-CHWurFdU.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
